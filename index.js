@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.getMaxListeners('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send({ hi: 'there' });
 });
 
-app.listenerCount(5000);
+app.listen(5000);
