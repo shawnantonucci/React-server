@@ -8,3 +8,6 @@ passport.user(new GoogleStrategy());
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
+
+// Google API
+// https://console.developers.google.com
