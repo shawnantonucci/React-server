@@ -8,7 +8,13 @@ const Landing = () => <h2>Landing</h2>
 
 const App = () => {
     return (
-        <div>Hi There!</div>
+        <div>
+            <BrowserRouter>
+                <div>
+                    <Route path="/" component={Landing} />
+                </div>
+            </BrowserRouter>
+        </div>
     );
 };
 
