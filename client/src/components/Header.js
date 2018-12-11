@@ -1,31 +1,39 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import authReducer from '../reducers/authReducer';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import authReducer from "../reducers/authReducer";
 
 class Header extends Component {
-    render() {
-        console.log(this.props);
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
         return (
-            <div>
-                <nav>
-                    <div className="nav-wrapper">
-                        <a className="left brand-logo">
-                            Emaily
-                        </a>
-                        <ul className="right">
-                            <li>
-                                <a>Login With Google</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
+          <li>
+            <a href="/auth/google">Login With Google</a>
+          </li>
         );
+      default:
+        return <li><a>Logout</a></li>;
     }
+  }
+
+  render() {
+    return (
+      <div>
+        <nav>
+          <div className="nav-wrapper">
+            <a className="left brand-logo">Emaily</a>
+            <ul className="right">{this.renderContent()}</ul>
+          </div>
+        </nav>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps({ auth }) {
-    return { auth };
+  return { auth };
 }
 
 export default connect(mapStateToProps)(Header);
