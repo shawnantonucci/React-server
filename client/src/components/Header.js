@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
+import styled from "styled-components";
+
+const LinkColor = styled.li`
+  color: ${props => props.theme.successColor};
+`;
 
 class Header extends Component {
   renderContent() {
@@ -10,17 +15,17 @@ class Header extends Component {
         return;
       case false:
         return (
-          <li>
+          <LinkColor>
             <a href="/auth/google">Login With Google</a>
-          </li>
+          </LinkColor>
         );
       default:
         return [
-          <li key="1"><Payments /></li>,
-          <li key="3" style={{ margin: '0 10px' }}>
+          <LinkColor key="1"><Payments /></LinkColor>,
+          <LinkColor key="3" style={{ margin: '0 10px' }}>
             Credits: {this.props.auth.credits}
-          </li>,
-          <li key='2'><a href="/api/logout">Logout</a></li>
+          </LinkColor>,
+          <LinkColor key='2'><a href="/api/logout">Logout</a></LinkColor>
         ];
     }
   }
