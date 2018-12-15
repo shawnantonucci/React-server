@@ -43,7 +43,6 @@ class App extends Component {
           <BrowserRouter>
             <div>
               <Header />
-              <Box>Hello World</Box>
 
               <Route exact path="/" component={Landing} />
               <Route exact path="/surveys" component={Dashboard} />
