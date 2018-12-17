@@ -12,7 +12,7 @@ class Mailer {
         clickTracking: { enable: true }
       }
     };
-    sgMail.setApiKey(keys.sendgridKey);
+    sgMail.setApiKey(keys.sendGridKey);
   }
  
   async send() {
