@@ -41,7 +41,7 @@ class App extends Component {
       // <ThemeProvider theme={{ mode: "light" }}>
         <Container className="container">
           <BrowserRouter>
-            <div>
+            <div className="container">
               <Header />
 
               <Route exact path="/" component={Landing} />
