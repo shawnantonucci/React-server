@@ -9,7 +9,7 @@ import theme from "styled-theming";
 import Header from "./components/Header.js";
 import Landing from "./components/Landing";
 import Dashboard from './components/Dashboard';
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import SurveyNew from './components/surveys/SurveyNew';
 
 // const Container = styled.div`
 //   height: 100vh;
