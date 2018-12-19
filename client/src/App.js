@@ -2,34 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "./actions";
-import styled, { ThemeProvider } from "styled-components";
-// import theme from './theme';               //// theme
-import theme from "styled-theming";
 
 import Header from "./components/Header.js";
 import Landing from "./components/Landing";
 import Dashboard from './components/Dashboard';
 import SurveyNew from './components/surveys/SurveyNew';
 
-// const Container = styled.div`
-//   height: 100vh;
-//   width: 100%;                             //// theme
-//   background-color: pink;
-// `;
-
-const boxBackgroundColor = theme("mode", {
-  light: "#fff",
-  dark: "#000"
-});
-
-const Box = styled.div`
-  background-color: ${boxBackgroundColor};
-`;
-
-const Container = styled.div`
-  background-color: ${boxBackgroundColor};
-  color: ${boxBackgroundColor};
-`;
 
 class App extends Component {
   componentDidMount() {
@@ -38,8 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      // <ThemeProvider theme={{ mode: "light" }}>
-        <Container className="container">
+        <div className="container">
           <BrowserRouter>
             <div className="container">
               <Header />
@@ -49,8 +26,7 @@ class App extends Component {
               <Route path="/surveys/new" component={SurveyNew} />
             </div>
           </BrowserRouter>
-        </Container>
-      // </ThemeProvider>
+        </div>
     );
   }
 }
